@@ -62,7 +62,7 @@ $(document).ready(function() {
       }),
       success: function(data) {
         parentEl.attr('data-car-id', data.id).toggleClass('datatable__row--editing');
-        parentEl.find('[data-car-mode;-paragraph]').text(carModel);
+        parentEl.find('[data-car-model-paragraph]').text(carModel);
         parentEl.find('[data-car-year-paragraph]').text(carYear);
         parentEl.find('[data-car-regNumber-paragraph]').text(carReg);
 
