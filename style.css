@@ -139,10 +139,10 @@ background-color: black;}
   line-height: 1.25;
   border-radius: 4px; }
 
-.datatable__tasks-container:empty {
+.datatable__cars-container:empty {
   position: relative; }
 
-.datatable__tasks-container:empty::after {
+.datatable__cars-container:empty::after {
   content: 'Currently, there are no cars in the parking lot.'; }
 
 .template {
