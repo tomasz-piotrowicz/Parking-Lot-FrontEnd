@@ -1,6 +1,5 @@
 html {
   font-family: 'Roboto', sans-serif;
-  color: white;
   box-sizing: border-box;
   font-size: 16px;
   font-weight: normal;
@@ -17,9 +16,7 @@ textarea {
 
 body {
   margin: 0;
-  padding: 0;
-  background-image: url(1.jpg);
-  background-size: cover; }
+  padding: 0; }
 
 *,
 *::before,
@@ -33,8 +30,7 @@ body {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
-  margin-left: auto; 
-background-color: black;}
+  margin-left: auto; }
 
 @media (min-width: 768px) {
   .container {
@@ -45,7 +41,7 @@ background-color: black;}
 @media (min-width: 1200px) {
   .container {
     width: 1170px; } }
-.crud-heading--main {
+.kodilla-heading--main {
   margin: 20px auto;
   text-align: center;
   font-size: 30px;
@@ -58,8 +54,7 @@ background-color: black;}
   align-items: stretch;
   border: 1px solid #ccc;
   border-bottom: none;
-  margin: 0; 
-  }
+  margin: 0; }
 
 .datatable__row:first-of-type {
   border-top-left-radius: 4px;
@@ -124,7 +119,7 @@ background-color: black;}
 
 .datatable__button {
   color: #fff;
-  background-color: grey;
+  background-color: #28a745;
   display: block;
   margin-bottom: 5px;
   font-weight: 400;
@@ -143,7 +138,7 @@ background-color: black;}
   position: relative; }
 
 .datatable__cars-container:empty::after {
-  content: 'Currently, there are no cars in the parking lot.'; }
+  content: 'Currently, there are no cars available.'; }
 
 .template {
   display: none;

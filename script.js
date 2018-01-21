@@ -11,20 +11,17 @@ $(document).ready(function() {
     var element = $(datatableRowTemplate).clone();
 
     element.attr('data-car-id', data.id);
-    element.find('[data-car-model-section] [data-car-model-paragraph]').text(data.model);
-    element.find('[data-car-model-section] [data-car-model-input]').val(data.model);
+    element.find('[data-car-name-section] [data-car-name-paragraph]').text(data.model);
+    element.find('[data-car-name-section] [data-car-name-input]').val(data.model);
 
-    element.find('[data-car-year-section] [data-car-year-paragraph]').text(data.year);
-    element.find('[data-car-year-section] [data-car-year-input]').val(data.year);
-
-    element.find('[data-car-regNumber-section] [data-car-regNumber-paragraph]').text(data.regNumber);
-    element.find('[data-car-regNumber-section] [data-car-regNumber-input]').val(data.regNumber);
+    element.find('[data-car-content-section] [data-car-content-paragraph]').text(data.regNumber);
+    element.find('[data-car-content-section] [data-car-content-input]').val(data.regNumber);
 
     return element;
   }
 
   function handleDatatableRender(data) {
-    carContainer.empty();
+    carsContainer.empty();
     data.forEach(function(car) {
       createElement(car).appendTo(carsContainer);
     });
@@ -43,9 +40,8 @@ $(document).ready(function() {
   function handleCarUpdateRequest() {
     var parentEl = $(this).parent().parent();
     var carId = parentEl.attr('data-car-id');
-    var carModel = parentEl.find('[data-car-model-input]').val();
-    var carYear = parentEl.find('[data-car-year-input]').val();
-    var carReg = parentEl.find('[data-car-regNumber-input]').val();
+    var carModel = parentEl.find('[data-car-name-input]').val();
+    var carReg = parentEl.find('[data-car-content-input]').val();
     var requestUrl = apiRoot + 'updateCar';
 
     $.ajax({
@@ -57,15 +53,12 @@ $(document).ready(function() {
       data: JSON.stringify({
         id: carId,
         model: carModel,
-        year: carYear,
         regNumber: carReg
       }),
       success: function(data) {
         parentEl.attr('data-car-id', data.id).toggleClass('datatable__row--editing');
-        parentEl.find('[data-car-model-paragraph]').text(carModel);
-        parentEl.find('[data-car-year-paragraph]').text(carYear);
-        parentEl.find('[data-car-regNumber-paragraph]').text(carReg);
-
+        parentEl.find('[data-car-name-paragraph]').text(carModel);
+        parentEl.find('[data-car-content-paragraph]').text(carReg);
       }
     });
   }
@@ -89,9 +82,8 @@ $(document).ready(function() {
   function handleCarSubmitRequest(event) {
     event.preventDefault();
 
-    var carModel = $(this).find('[name="model"]').val();
-    var carYear = $(this).find('[name="year"]').val();
-    var carReg = $(this).find('[name="regNumber"]').val();
+    var carModel = $(this).find('[name="title"]').val();
+    var carReg = $(this).find('[name="content"]').val();
 
     var requestUrl = apiRoot + 'createCar';
 
@@ -103,7 +95,6 @@ $(document).ready(function() {
       dataType: 'json',
       data: JSON.stringify({
         model: carModel,
-        year: carYear,
         regNumber: carReg
       }),
       complete: function(data) {
@@ -118,14 +109,11 @@ $(document).ready(function() {
     var parentEl = $(this).parent().parent();
     parentEl.toggleClass('datatable__row--editing');
 
-    var carModel = parentEl.find('[data-car-model-paragraph]').text();
-    var carYear = parentEl.find('[data-car-year-paragraph]').text();
-    var carReg = parentEl.find('[data-car-regNumber-paragraph]').text();
+    var carTitle = parentEl.find('[data-car-name-paragraph]').text();
+    var carContent = parentEl.find('[data-car-content-paragraph]').text();
 
-
-    parentEl.find('[data-car-model-input]').val(carModel);
-    parentEl.find('[data-car-year-input]').val(carYear);
-    parentEl.find('[data-car-regNumber-input]').val(carReg);
+    parentEl.find('[data-car-name-input]').val(carTitle);
+    parentEl.find('[data-car-content-input]').val(carContent);
   }
 
   $('[data-car-add-form]').on('submit', handleCarSubmitRequest);

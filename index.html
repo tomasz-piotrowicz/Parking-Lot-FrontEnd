@@ -8,11 +8,11 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&subset=latin-ext" rel="stylesheet">
 </head>
 <body>
-<h1 class="crud-heading crud-heading--main">Parking Lot Manager App</h1>
+<h1 class="kodilla-heading kodilla-heading--main">Parking Lot Manager App</h1>
 
 <main class="crud container">
   <section class="datatable">
-    <h2>Order place for your car</h2>
+    <h2>Add a new task</h2>
     <form
         class="datatable__row datatable__row--add"
         method="POST"
@@ -21,60 +21,45 @@
     >
       <fieldset class="datatable__row-section datatable__row-section--input-section">
         <label class="datatable__input-label">
-          Car Model
+          Task name
         </label>
-        <input type="text" name="model" placeholder="Insert your car model" required minlength="3">
+        <input type="text" name="title" placeholder="Insert a task name" required minlength="3">
       </fieldset>
 
       <fieldset class="datatable__row-section datatable__row-section--input-section">
         <label class="datatable__input-label">
-          Production year
+          Task content
         </label>
-        <textarea name="year" placeholder="Insert production year" required minlength="3"></textarea>
-      </fieldset>
-
-      <fieldset class="datatable__row-section datatable__row-section--input-section">
-        <label class="datatable__input-label">
-          Registration number
-        </label>
-        <textarea name="regNumber" placeholder="Insert registration number" required minlength="3"></textarea>
+        <textarea name="content" placeholder="Insert task content" required minlength="3"></textarea>
       </fieldset>
 
       <fieldset class="datatable__row-section datatable__row-section--button-section">
-        <button type="submit" data-car-add-button class="datatable__button">Add a car</button>
+        <button type="submit" data-car-add-button class="datatable__button">Add a task</button>
       </fieldset>
     </form>
   </section>
   <section class="datatable">
-    <h2>Cars in the parking lot</h2>
+    <h2>Tasks from the API</h2>
     <div class="datatable__cars-container" data-cars-container></div>
   </section>
 </main>
 
 <div class="template" data-datatable-row-template>
   <form class="datatable__row" data-car-id="0">
-    <fieldset class="datatable__row-section datatable__row-section--input-section" data-car-model-section>
+    <fieldset class="datatable__row-section datatable__row-section--input-section" data-car-name-section>
       <label class="datatable__input-label">
-        Car Model
+        Task name
       </label>
-      <input type="text" name="model" placeholder="Insert a new task name" data-car-model-input required minlength="3">
-      <p class="datatable__field-value" data-car-model-paragraph></p>
+      <input type="text" name="title" placeholder="Insert a new task name" data-car-name-input required minlength="3">
+      <p class="datatable__field-value" data-car-name-paragraph></p>
     </fieldset>
 
-    <fieldset class="datatable__row-section datatable__row-section--input-section" data-car-year-section>
+    <fieldset class="datatable__row-section datatable__row-section--input-section" data-car-content-section>
       <label class="datatable__input-label">
-        Production year
+        Task content
       </label>
-      <textarea name="year" placeholder="Insert new task content" data-car-year-input required minlength="3"></textarea>
-      <p class="datatable__field-value" data-car-year-paragraph></p>
-    </fieldset>
-
-    <fieldset class="datatable__row-section datatable__row-section--input-section" data-car-regNumber-section>
-      <label class="datatable__input-label">
-        Registration number
-      </label>
-      <textarea name="regNumber" placeholder="Insert new task content" data-car-regNumber-input required minlength="3"></textarea>
-      <p class="datatable__field-value" data-car-regNumber-paragraph></p>
+      <textarea name="title" placeholder="Insert new task content" data-car-content-input required minlength="3"></textarea>
+      <p class="datatable__field-value" data-car-content-paragraph></p>
     </fieldset>
 
     <fieldset class="datatable__row-section datatable__row-section--button-section">
