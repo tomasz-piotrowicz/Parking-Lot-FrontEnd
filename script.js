@@ -11,7 +11,7 @@ $(document).ready(function() {
     var element = $(datatableRowTemplate).clone();
 
     element.attr('data-car-id', data.id);
-    element.find('[data-car-model-section] [data-car-name-paragraph]').text(data.model);
+    element.find('[data-car-model-section] [data-car-model-paragraph]').text(data.model);
     element.find('[data-car-model-section] [data-car-model-input]').val(data.model);
 
     element.find('[data-car-year-section] [data-car-year-paragraph]').text(data.year);
