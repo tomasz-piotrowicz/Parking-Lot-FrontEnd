@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var apiRoot = 'http://localhost:8080/v1/task/';
+  var apiRoot = 'https://limitless-coast-14154.herokuapp.com/v1/task/';
   var datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   var carsContainer = $('[data-cars-container]');
 
