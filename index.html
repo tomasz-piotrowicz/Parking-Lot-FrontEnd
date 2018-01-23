@@ -30,7 +30,7 @@
         <label class="datatable__input-label">
           Task content
         </label>
-        <textarea name="content" placeholder="Insert task content" required minlength="3"></textarea>
+        <textarea name="regNumber" placeholder="Insert task content" required minlength="3"></textarea>
       </fieldset>
 
       <fieldset class="datatable__row-section datatable__row-section--button-section">
@@ -46,20 +46,20 @@
 
 <div class="template" data-datatable-row-template>
   <form class="datatable__row" data-car-id="0">
-    <fieldset class="datatable__row-section datatable__row-section--input-section" data-car-name-section>
+    <fieldset class="datatable__row-section datatable__row-section--input-section" data-car-model-section>
       <label class="datatable__input-label">
         Task name
       </label>
-      <input type="text" name="title" placeholder="Insert a new task name" data-car-name-input required minlength="3">
-      <p class="datatable__field-value" data-car-name-paragraph></p>
+      <input type="text" name="model" placeholder="Insert a new task name" data-car-model-input required minlength="3">
+      <p class="datatable__field-value" data-car-model-paragraph></p>
     </fieldset>
 
-    <fieldset class="datatable__row-section datatable__row-section--input-section" data-car-content-section>
+    <fieldset class="datatable__row-section datatable__row-section--input-section" data-car-regNumber-section>
       <label class="datatable__input-label">
         Task content
       </label>
-      <textarea name="title" placeholder="Insert new task content" data-car-content-input required minlength="3"></textarea>
-      <p class="datatable__field-value" data-car-content-paragraph></p>
+      <textarea name="regNumber" placeholder="Insert new task content" data-car-regNumber-input required minlength="3"></textarea>
+      <p class="datatable__field-value" data-car-regNumber-paragraph></p>
     </fieldset>
 
     <fieldset class="datatable__row-section datatable__row-section--button-section">

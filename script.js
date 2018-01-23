@@ -40,8 +40,8 @@ $(document).ready(function() {
   function handleCarUpdateRequest() {
     var parentEl = $(this).parent().parent();
     var carId = parentEl.attr('data-car-id');
-    var carModel = parentEl.find('[data-car-name-input]').val();
-    var carReg = parentEl.find('[data-car-content-input]').val();
+    var carModel = parentEl.find('[data-car-model-input]').val();
+    var carReg = parentEl.find('[data-car-regNumber-input]').val();
     var requestUrl = apiRoot + 'updateCar';
 
     $.ajax({
@@ -57,8 +57,8 @@ $(document).ready(function() {
       }),
       success: function(data) {
         parentEl.attr('data-car-id', data.id).toggleClass('datatable__row--editing');
-        parentEl.find('[data-car-name-paragraph]').text(carModel);
-        parentEl.find('[data-car-content-paragraph]').text(carReg);
+        parentEl.find('[data-car-model-paragraph]').text(carModel);
+        parentEl.find('[data-car-regNumber-paragraph]').text(carReg);
       }
     });
   }
@@ -83,7 +83,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var carModel = $(this).find('[name="model"]').val();
-    var carReg = $(this).find('[name="content"]').val();
+    var carReg = $(this).find('[name="regNumber"]').val();
 
     var requestUrl = apiRoot + 'createCar';
 
@@ -109,11 +109,11 @@ $(document).ready(function() {
     var parentEl = $(this).parent().parent();
     parentEl.toggleClass('datatable__row--editing');
 
-    var carTitle = parentEl.find('[data-car-name-paragraph]').text();
-    var carContent = parentEl.find('[data-car-content-paragraph]').text();
+    var carModel = parentEl.find('[data-car-model-paragraph]').text();
+    var carReg = parentEl.find('[data-car-regNumber-paragraph]').text();
 
-    parentEl.find('[data-car-name-input]').val(carTitle);
-    parentEl.find('[data-car-content-input]').val(carContent);
+    parentEl.find('[data-car-model-input]').val(carTitle);
+    parentEl.find('[data-car-regNumber-input]').val(carContent);
   }
 
   $('[data-car-add-form]').on('submit', handleCarSubmitRequest);
