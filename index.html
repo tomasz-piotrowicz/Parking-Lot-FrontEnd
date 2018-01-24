@@ -21,14 +21,14 @@
     >
       <fieldset class="datatable__row-section datatable__row-section--input-section">
         <label class="datatable__input-label">
-          Task name
+          Car model
         </label>
         <input type="text" name="model" placeholder="Insert a task name" required minlength="3">
       </fieldset>
 
       <fieldset class="datatable__row-section datatable__row-section--input-section">
         <label class="datatable__input-label">
-          Task content
+          Registration number
         </label>
         <textarea name="regNumber" placeholder="Insert task content" required minlength="3"></textarea>
       </fieldset>
@@ -39,7 +39,7 @@
     </form>
   </section>
   <section class="datatable">
-    <h2>Tasks from the API</h2>
+    <h2>Cars from the API</h2>
     <div class="datatable__cars-container" data-cars-container></div>
   </section>
 </main>
@@ -48,7 +48,7 @@
   <form class="datatable__row" data-car-id="0">
     <fieldset class="datatable__row-section datatable__row-section--input-section" data-car-model-section>
       <label class="datatable__input-label">
-        Task name
+        Car model
       </label>
       <input type="text" name="model" placeholder="Insert a new task name" data-car-model-input required minlength="3">
       <p class="datatable__field-value" data-car-model-paragraph></p>
@@ -56,7 +56,7 @@
 
     <fieldset class="datatable__row-section datatable__row-section--input-section" data-car-regNumber-section>
       <label class="datatable__input-label">
-        Task content
+        Registration number
       </label>
       <textarea name="regNumber" placeholder="Insert new task content" data-car-regNumber-input required minlength="3"></textarea>
       <p class="datatable__field-value" data-car-regNumber-paragraph></p>

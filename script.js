@@ -11,11 +11,11 @@ $(document).ready(function() {
     var element = $(datatableRowTemplate).clone();
 
     element.attr('data-car-id', data.id);
-    element.find('[data-car-name-section] [data-car-name-paragraph]').text(data.model);
-    element.find('[data-car-name-section] [data-car-name-input]').val(data.model);
+    element.find('[data-car-model-section] [data-car-model-paragraph]').text(data.model);
+    element.find('[data-car-model-section] [data-car-model-input]').val(data.model);
 
-    element.find('[data-car-content-section] [data-car-content-paragraph]').text(data.regNumber);
-    element.find('[data-car-content-section] [data-car-content-input]').val(data.regNumber);
+    element.find('[data-car-regNumber-section] [data-car-regNumber-paragraph]').text(data.regNumber);
+    element.find('[data-car-regNumber-section] [data-car-regNumber-input]').val(data.regNumber);
 
     return element;
   }
